@@ -20,12 +20,16 @@
         <!-- AngularJS -->
         <script src="js/angular.min.js"></script>
 
+        <!-- Custom AngularJS -->
+        <script src="js/app.js"></script>
+
     </head>
     <body>
 
-    	<div class="header-wrapper">
-			<span class="logo pull-left">BookArt</span>
-			<span class="tagline pull-left">We have 1 million books for you</span>
+		<!-- NG CONTROLLER WILL CONTROL THE HEADER ELEMENT, THIS IS THE HEADER VIEW-->
+    	<div id="header-wrapper" ng-controller="headerController">
+			<span class="logo pull-left" >{{message.title}}</span>
+			<span class="tagline pull-left">{{message.tagline}}</span>
 			<div class="nav-wrapper pull-left">
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#">Books</a></li>
