@@ -20,6 +20,125 @@ myApp.config(function($routeProvider){
 });
 
 
+//Creating the BookList Service
+myApp.factory('bookService', function(){
+
+	var books = [
+  {
+    "index": 0,
+    "imgURL": "img/great-reset.png",
+    "bookName": "Geekwagon",
+    "author": "Victoria Guerra",
+    "price": "$153.70",
+    "rating": 5,
+    "binding": "Paperback",
+    "publisher": "Zilladyne Qaboos",
+    "releaseDate": "July 22, 2014",
+    "details": "Elit nisi commodo minim eiusmod est adipisicing."
+  },
+  {
+    "index": 1,
+    "imgURL": "img/responsive-design.png",
+    "bookName": "Pyramia",
+    "author": "Rivers Rutledge",
+    "price": "$105.50",
+    "rating": 5,
+    "binding": "Paperback",
+    "publisher": "Strezzo Qot",
+    "releaseDate": "May 02, 2015",
+    "details": "Esse mollit reprehenderit aliquip reprehenderit sunt in tempor labore ex reprehenderit."
+  },
+  {
+    "index": 2,
+    "imgURL": "img/responsive-design.png",
+    "bookName": "Zilch",
+    "author": "Kelsey Moon",
+    "price": "$155.98",
+    "rating": 5,
+    "binding": "Electronic",
+    "publisher": "Flumbo Exoplode",
+    "releaseDate": "November 13, 2015",
+    "details": "Aute veniam labore fugiat ea."
+  },
+  {
+    "index": 3,
+    "imgURL": "img/great-reset.png",
+    "bookName": "Geekfarm",
+    "author": "Mendoza Mendoza",
+    "price": "$82.03",
+    "rating": 4,
+    "binding": "Hardcover",
+    "publisher": "Proflex Baluba",
+    "releaseDate": "August 26, 2014",
+    "details": "Laboris culpa ex laboris quis minim incididunt nostrud proident ullamco officia ad reprehenderit."
+  },
+  {
+    "index": 4,
+    "imgURL": "img/responsive-design.png",
+    "bookName": "Musanpoly",
+    "author": "Mona Diaz",
+    "price": "$98.19",
+    "rating": 2,
+    "binding": "Hardcover",
+    "publisher": "Parleynet Tourmania",
+    "releaseDate": "May 18, 2015",
+    "details": "Eiusmod quis velit voluptate labore Lorem consectetur commodo sunt nisi enim."
+  },
+  {
+    "index": 5,
+    "imgURL": "img/great-reset.png",
+    "bookName": "Bostonic",
+    "author": "Bishop Morgan",
+    "price": "$90.34",
+    "rating": 3,
+    "binding": "Hardcover",
+    "publisher": "Dentrex Deviltoe",
+    "releaseDate": "April 15, 2014",
+    "details": "Lorem ad anim laborum excepteur."
+  },
+  {
+    "index": 6,
+    "imgURL": "img/responsive-design.png",
+    "bookName": "Geofarm",
+    "author": "Cindy Bradshaw",
+    "price": "$168.39",
+    "rating": 5,
+    "binding": "Hardcover",
+    "publisher": "Maineland Kidgrease",
+    "releaseDate": "December 11, 2015",
+    "details": "Cupidatat commodo ullamco eu est."
+  }
+];
+	return {
+		getBooks: function(){
+			return books;
+		}
+	 }
+});
+
+// Creating Cart Service
+myApp.factory('cartService', function(){
+
+	var cart = [];
+
+	return{
+		getCart: function(){
+			return cart;
+		},
+		addToCart: function(book){
+			cart.push(book);
+		}, 
+		buy: function(book){
+			alert('Thank you for buying: '+book.bookName+' by '+book.imgURL);
+		}
+	}
+
+});
+
+
+
+
+
 
 // Creating headerController
 myApp.controller('headerController', function($scope){
@@ -30,101 +149,25 @@ myApp.controller('headerController', function($scope){
 });
 
 // Creating headerController
-myApp.controller('cartlistController', function($scope){
-	$scope.cart = [];
+myApp.controller('cartlistController', function($scope, cartService){
+
+	$scope.cart = cartService.getCart();
 
 	$scope.buy = function(book){
-		console.log('buy: ', book);
+		
+		cartService.buy(book);
 	}
 });
 
 //Creating booklistController
-myApp.controller('booklistController', function($scope){
+myApp.controller('booklistController', function($scope, bookService, cartService){
 
-	$scope.books = [
-  {
-    "index": 0,
-    "imgURL": "img/responsive-design.png",
-    "bookName": "Frolix",
-    "price": "$124.91",
-    "rating": 4,
-    "binding": "Electronic",
-    "publisher": "Memora Lyria",
-    "releaseDate": "May 22, 2015",
-    "details": "Ipsum tempor nostrud commodo dolore dolor laborum fugiat amet ad duis quis sit."
-  },
-  {
-    "index": 1,
-    "imgURL": "img/great-reset.png",
-    "bookName": "Extro",
-    "price": "$29.40",
-    "rating": 4,
-    "binding": "Electronic",
-    "publisher": "Comvey Neteria",
-    "releaseDate": "November 02, 2015",
-    "details": "Incididunt excepteur pariatur in eu exercitation labore pariatur labore et id incididunt ullamco ea."
-  },
-  {
-    "index": 2,
-    "imgURL": "img/great-reset.png",
-    "bookName": "Opticon",
-    "price": "$98.98",
-    "rating": 2,
-    "binding": "Electronic",
-    "publisher": "Supportal Lunchpad",
-    "releaseDate": "April 24, 2015",
-    "details": "Nulla nisi enim quis dolor."
-  },
-  {
-    "index": 3,
-    "imgURL": "img/responsive-design.png",
-    "bookName": "Musaphics",
-    "price": "$147.67",
-    "rating": 1,
-    "binding": "Hardcover",
-    "publisher": "Kangle Supremia",
-    "releaseDate": "May 04, 2014",
-    "details": "Elit qui ullamco ad cupidatat veniam ut ut exercitation laborum et."
-  },
-  {
-    "index": 4,
-    "imgURL": "img/responsive-design.png",
-    "bookName": "Farmage",
-    "price": "$168.99",
-    "rating": 3,
-    "binding": "Hardcover",
-    "publisher": "Rodemco Pearlesex",
-    "releaseDate": "November 13, 2015",
-    "details": "Voluptate do ipsum labore officia aliqua est exercitation."
-  },
-  {
-    "index": 5,
-    "imgURL": "img/great-reset.png",
-    "bookName": "Satiance",
-    "price": "$111.58",
-    "rating": 5,
-    "binding": "Paperback",
-    "publisher": "Uneeq Furnigeer",
-    "releaseDate": "April 17, 2015",
-    "details": "Pariatur sit nulla aliquip id enim tempor pariatur occaecat ipsum aute quis eiusmod eiusmod."
-  },
-  {
-    "index": 6,
-    "imgURL": "img/great-reset.png",
-    "bookName": "Matrixity",
-    "price": "$150.06",
-    "rating": 2,
-    "binding": "Hardcover",
-    "publisher": "Aquazure Kiggle",
-    "releaseDate": "July 15, 2015",
-    "details": "Aute deserunt laboris qui ullamco cillum voluptate ea ad amet elit sunt dolor dolore nisi."
-  }
-];
+	$scope.books = bookService.getBooks();
 
-$scope.addToCart = function(book){
+	$scope.addToCart = function(book){
 
-	console.log("add to cart: ", book.bookName);
-}
+		cartService.addToCart(book);
+	}
 
 
 
