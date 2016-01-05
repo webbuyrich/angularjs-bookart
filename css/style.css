@@ -44,3 +44,8 @@
 
 .book{background: #337AB7; color: #fff;}
 
+.book-border{
+    border: 2px solid #000; 
+    margin: 0 0 10px 5px!important;
+    padding: 10px;
+}

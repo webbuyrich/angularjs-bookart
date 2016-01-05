@@ -1,0 +1,23 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    index: '{{index()}}',
+    imgURL: function (img) {
+      var image = ['great-reset.png', 'responsive-design.png'];
+      return 'img/'+image[img.integer(0, image.length - 1)];
+    },
+    bookName: '{{company()}}',
+    price: '{{floating(20, 200, 2, "$0.00")}}',
+    rating: '{{integer(1, 5)}}',
+    binding: function (book) {
+      var binding = ['Hardcover', 'Paperback', 'Electronic'];
+      return binding[book.integer(0, binding.length - 1)];
+    }, 
+    publisher: '{{company()}} {{company()}}',
+    releaseDate: '{{date(new Date(2014, 0, 1), new Date(), "MMMM dd, YYYY")}}',
+    details: '{{lorem(1, "sentence")}}'
+  }
+]
+
+
+http://www.json-generator.com/

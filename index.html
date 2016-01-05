@@ -33,34 +33,40 @@
 			<div class="nav-wrapper pull-left">
 				<ul class="nav nav-pills">
 					<li class="active"><a href="#">Books</a></li>
-					<li><a href="#">Kart</a></li>
+					<li><a href="#">Cart</a></li>
 				</ul>
 			</div>
     	</div>
 
     	<div id="bookListWrapper">
+    		<!-- SEARCH FORM -->
     		<form role="form">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search here...">
 				</div>
     		</form>
-    		<div id="bookListDiv">
-				<ul class="list-unstyled">
-					<li class="book" >
-						<div class="book-details clearfix">
-							<h3>Adultery</h3>
-							<p>205</p>
-							<ul class="list-unstyled list-inline">
-								<li>Rating: 4</li>
-								<li> Binding: Paperback</li>
-								<li>Publisher: Random House India</li>
-								<li>Released: 12-08-2014</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aspernatur quos eveniet consectetur repellendus vel ut eum. Deleniti ea hic tempore nihil cumque, unde? Ut officiis suscipit illum voluptatibus assumenda.</p>
-						</div>
-					</li>
-					
-				</ul>
+
+    		<!-- LIST OF BOOKS -->
+    		<div id="bookListDiv" ng-controller="booklistController">
+				<div class="row book-border" ng-repeat="book in books">
+		            <div class="col-md-1">
+		                <a href="#">
+		                    <img class="img-responsive" ng-src="{{book.imgURL}}" width="160px;"alt="">
+		                </a>
+		            </div>
+		            <div class="col-md-11">
+		                <h3>{{book.bookName}}</h3>
+		                <h4>{{book.price}}</h4>
+		                <ul class="list-unstyled list-block">
+		                    <li>Rating:	{{book.rating}} out of 5</li>
+		                    <li>Binding:	{{book.binding}}</li>
+		                    <li>Publisher:	{{book.publisher}}</li>
+		                    <li>Release Date:	{{book.releaseDate}}</li>
+		                </ul>
+		                <p>Details:	{{book.details}}</p>
+		                <a class="btn btn-primary" href="#" ng-click="addToCart(book)">Add to Cart</a>
+		            </div>
+		        </div>
     		</div>
     	</div>
         
