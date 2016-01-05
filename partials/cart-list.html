@@ -1,35 +1,31 @@
-<!-- This will show the book cart -->
-<div id="bookListWrapper">
-<p>The cart view.</p>
+<!-- This will show the cart-->
 
-<div class="row cart-border">
-            <div class="col-md-2 portfolio-item">
+
+<div id="cartListWrapper">
+	<p>Please click on the button to buy the book.</p>
+	<!-- SEARCH FORM -->
+
+
+	<!-- LIST OF BOOKS -->
+	<div id="cartListDiv" >
+		<div class="row book-border" ng-repeat="book in cart">
+            <div class="col-md-1">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                    <img class="img-responsive" ng-src="{{book.imgURL}}" width="160px;"alt="">
                 </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
-            <div class="col-md-2 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-2 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <div class="col-md-11">
+                <h3>{{book.bookName}}</h3>
+                <h4>{{book.price}}</h4>
+                <ul class="list-unstyled list-block">
+                    <li>Rating:	{{book.rating}} out of 5</li>
+                    <li>Binding:	{{book.binding}}</li>
+                    <li>Publisher:	{{book.publisher}}</li>
+                    <li>Release Date:	{{book.releaseDate}}</li>
+                </ul>
+                <p>Details:	{{book.details}}</p>
+                <a class="btn btn-primary" href="#" ng-click="buy(book)">Buy</a>
             </div>
         </div>
-        <!-- /.row -->
+	</div>
 </div>

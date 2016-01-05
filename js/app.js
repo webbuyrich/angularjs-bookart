@@ -11,12 +11,15 @@ myApp.config(function($routeProvider){
 		controller: 'booklistController'
 	})
 	.when('/cart',{
-		templateUrl: 'partials/cart-list.html'
+		templateUrl: 'partials/cart-list.html',
+		controller: 'cartlistController'
 	})
 	.otherwise({
 		redirectTo: '/books'
 	});
 });
+
+
 
 // Creating headerController
 myApp.controller('headerController', function($scope){
@@ -26,6 +29,14 @@ myApp.controller('headerController', function($scope){
 	};
 });
 
+// Creating headerController
+myApp.controller('cartlistController', function($scope){
+	$scope.cart = [];
+
+	$scope.buy = function(book){
+		console.log('buy: ', book);
+	}
+});
 
 //Creating booklistController
 myApp.controller('booklistController', function($scope){

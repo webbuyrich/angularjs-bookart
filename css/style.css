@@ -39,18 +39,12 @@
     margin-left: 160px;
 }
 
-#bookListDiv{margin-top: 50px;}
+#bookListDiv, #cartListDiv{margin-top: 50px;}
 
 .book{background: #337AB7; color: #fff;}
 
-.book-border{
+.book-border, .cart-border{
     border: 2px solid #000; 
-    margin: 0 0 10px 5px!important;
-    padding: 10px;
-}
-
-.cart-border{
-    
     margin: 0 0 10px 5px!important;
     padding: 10px;
 }
