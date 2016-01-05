@@ -1,5 +1,22 @@
 // Creatinig a module
-var myApp = angular.module("myApp", []);
+var myApp = angular.module("myApp", ['ngRoute']);
+
+
+//Creating configuration for routes
+myApp.config(function($routeProvider){
+
+	$routeProvider
+	.when('/books',{
+		templateUrl: 'partials/book-list.html',
+		controller: 'booklistController'
+	})
+	.when('/cart',{
+		templateUrl: 'partials/cart-list.html'
+	})
+	.otherwise({
+		redirectTo: '/books'
+	});
+});
 
 // Creating headerController
 myApp.controller('headerController', function($scope){

@@ -21,14 +21,13 @@
     margin-top: 15px;
 }
 
-#bookListWrapper{
+#bookListWrapper, #cartListWrapper{
    width: 100%;
-   padding: 10px;
+   padding: 1px;
+   clear: both;
 }
 
-#bookListWrapper input{
-    width: 25%;
-}
+
 
 #bookListWrapper .book{
     border: 1px solid gray;
@@ -46,6 +45,12 @@
 
 .book-border{
     border: 2px solid #000; 
+    margin: 0 0 10px 5px!important;
+    padding: 10px;
+}
+
+.cart-border{
+    
     margin: 0 0 10px 5px!important;
     padding: 10px;
 }
