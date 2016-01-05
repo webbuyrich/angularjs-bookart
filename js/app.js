@@ -1,17 +1,17 @@
+// Creatinig a module
+var myApp = angular.module("myApp", []);
 
-// Setting Header Controller
-var headerController = function($scope){
-
+// Creating headerController
+myApp.controller('headerController', function($scope){
 	$scope.message = {
-
 		title: "BookArt",
 		tagline: "We have 1 million books for you"
 	};
+});
 
-}
 
-// Setting BookList Controller
-var booklistController = function($scope){
+//Creating booklistController
+myApp.controller('booklistController', function($scope){
 
 	$scope.books = [
   {
@@ -101,4 +101,6 @@ $scope.addToCart = function(book){
 
 
 
-}
+});
+
+
