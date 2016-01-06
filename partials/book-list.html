@@ -22,7 +22,7 @@
                 <h4>{{book.price | currency}}</h4>
                 <ul class="list-unstyled list-block">
                     <li>Rating:	{{book.rating}} out of 5</li>
-                    <li>Binding:	{{book.binding}}</li>
+                    <li>Binding:	{{book.binding | uppercase}}</li>
                     <li>Publisher:	{{book.publisher}}</li>
                     <li>Release Date:	{{book.releaseDate}}</li>
                 </ul>
