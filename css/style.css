@@ -33,6 +33,7 @@
     border: 1px solid gray;
     padding: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 #bookListWrapper .book .book-details{
@@ -47,4 +48,44 @@
     border: 2px solid #000; 
     margin: 0 0 10px 5px!important;
     padding: 10px;
+}
+
+.container.ng-enter{
+    -webkit-transition: 0.9s linear all;
+    -moz-transition: 0.9s linear all;
+    -o-transition: 0.9s linear all;
+    transition: 0.9s linear all;
+    opacity: 0;
+}
+
+.container.ng-enter-active{
+    opacity: 1;
+}
+
+.book-border.ng-leave{
+    -webkit-transition: 0.9s linear all;
+    -moz-transition: 0.9s linear all;
+    -o-transition: 0.9s linear all;
+    transition: 0.9s linear all;
+    opacity: 1;
+   margin-left:20!important;
+}
+
+.book-border.ng-leave-active{
+    opacity: 0;
+    left: 600px;
+}
+
+.book-border.ng-enter{
+    -webkit-transition: 0.9s linear all;
+    -moz-transition: 0.9s linear all;
+    -o-transition: 0.9s linear all;
+    transition: 0.9s linear all;
+    opacity: 1;
+   margin-left:20!important;
+}
+
+.book-border.ng-enter-active{
+    opacity: 0;
+    left: 600px;
 }

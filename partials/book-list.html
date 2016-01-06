@@ -12,15 +12,15 @@
 	<!-- LIST OF BOOKS -->
 	<div id="bookListDiv" >
 		<div class="row book-border" ng-repeat="book in books | filter: searchString">
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <a href="#">
-                    <img class="img-responsive" ng-src="{{book.imgURL}}" width="160px;"alt="">
+                    <img class="img-responsive" ng-src="{{book.imgURL}}" height='200' width='130'alt="">
                 </a>
             </div>
-            <div class="col-md-11">
+            <div class="col-md-10">
                 <h3>{{book.bookName}}<h4 class="text-uppercase"> by {{book.author}}</h4></h3>
                 <h4>{{book.price | currency}}</h4>
-                <ul class="list-unstyled list-block">
+                <ul class="list-unstyled list-inline">
                     <li>Rating:	{{book.rating}} out of 5</li>
                     <li>Binding:	{{book.binding | uppercase}}</li>
                     <li>Publisher:	{{book.publisher}}</li>

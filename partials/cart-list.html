@@ -9,12 +9,12 @@
 	<!-- LIST OF BOOKS -->
 	<div id="cartListDiv" >
 		<div class="row book-border" ng-repeat="book in cart">
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <a href="#">
-                    <img class="img-responsive" ng-src="{{book.imgURL}}" width="160px;"alt="">
+                    <img class="img-responsive" ng-src="{{book.imgURL}}" height='200' width='130' alt="">
                 </a>
             </div>
-            <div class="col-md-11">
+            <div class="col-md-10">
                 <h3>{{book.bookName}}</h3>
                 <h4>{{book.price | currency}}</h4>
                 <ul class="list-unstyled list-block">
