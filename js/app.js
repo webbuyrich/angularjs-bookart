@@ -29,7 +29,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/great-reset.png",
     "bookName": "Geekwagon",
     "author": "Victoria Guerra",
-    "price": "$153.70",
+    "price": "153.70",
     "rating": 5,
     "binding": "Paperback",
     "publisher": "Zilladyne Qaboos",
@@ -41,7 +41,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/responsive-design.png",
     "bookName": "Pyramia",
     "author": "Rivers Rutledge",
-    "price": "$105.50",
+    "price": "105.50",
     "rating": 5,
     "binding": "Paperback",
     "publisher": "Strezzo Qot",
@@ -53,7 +53,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/responsive-design.png",
     "bookName": "Zilch",
     "author": "Kelsey Moon",
-    "price": "$155.98",
+    "price": "155.98",
     "rating": 5,
     "binding": "Electronic",
     "publisher": "Flumbo Exoplode",
@@ -65,7 +65,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/great-reset.png",
     "bookName": "Geekfarm",
     "author": "Mendoza Mendoza",
-    "price": "$82.03",
+    "price": "82.03",
     "rating": 4,
     "binding": "Hardcover",
     "publisher": "Proflex Baluba",
@@ -77,7 +77,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/responsive-design.png",
     "bookName": "Musanpoly",
     "author": "Mona Diaz",
-    "price": "$98.19",
+    "price": "98.19",
     "rating": 2,
     "binding": "Hardcover",
     "publisher": "Parleynet Tourmania",
@@ -89,7 +89,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/great-reset.png",
     "bookName": "Bostonic",
     "author": "Bishop Morgan",
-    "price": "$90.34",
+    "price": "90.34",
     "rating": 3,
     "binding": "Hardcover",
     "publisher": "Dentrex Deviltoe",
@@ -101,7 +101,7 @@ myApp.factory('bookService', function(){
     "imgURL": "img/responsive-design.png",
     "bookName": "Geofarm",
     "author": "Cindy Bradshaw",
-    "price": "$168.39",
+    "price": "168.39",
     "rating": 5,
     "binding": "Hardcover",
     "publisher": "Maineland Kidgrease",
@@ -129,7 +129,7 @@ myApp.factory('cartService', function(){
 			cart.push(book);
 		}, 
 		buy: function(book){
-			alert('Thank you for buying: '+book.bookName+' by '+book.imgURL);
+			alert('Thank you for buying: '+book.bookName+' by '+book.author);
 		}
 	}
 
