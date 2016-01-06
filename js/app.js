@@ -127,6 +127,7 @@ myApp.factory('cartService', function(){
 		},
 		addToCart: function(book){
 			cart.push(book);
+            alert(book.bookName+' has been added to the cart.');
 		}, 
 		buy: function(book){
 			alert('Thank you for buying: '+book.bookName+' by '+book.author);
@@ -141,11 +142,19 @@ myApp.factory('cartService', function(){
 
 
 // Creating headerController
-myApp.controller('headerController', function($scope){
+myApp.controller('headerController', function($scope, $location){
 	$scope.message = {
 		title: "BookArt",
 		tagline: "We have 1 million books for you"
 	};
+
+    $scope.nav = [];
+    $scope.nav.isActive = function(path){
+        if(path === $location.path()){
+            return true;
+        }
+            return false;
+    }
 });
 
 // Creating headerController
