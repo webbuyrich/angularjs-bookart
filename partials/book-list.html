@@ -5,13 +5,13 @@
 	<!-- SEARCH FORM -->
 	<form role="form" class="col-sm-3">
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search here...">
+			<input type="text" class="form-control" placeholder="Search here..." ng-model="searchString">
 		</div>
 	</form>
 
 	<!-- LIST OF BOOKS -->
 	<div id="bookListDiv" >
-		<div class="row book-border" ng-repeat="book in books">
+		<div class="row book-border" ng-repeat="book in books | filter: searchString">
             <div class="col-md-1">
                 <a href="#">
                     <img class="img-responsive" ng-src="{{book.imgURL}}" width="160px;"alt="">
